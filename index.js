@@ -68,7 +68,7 @@ async function init() {
     try{
         const user = await inquirer.prompt(questions);
 
-        const createMarkdown = generateMarkdown(user);
+        const createMarkdown = generateMarkdown(data);
         console.log(createMarkdown);
 
         writeToFile('README.md', createMarkdown);

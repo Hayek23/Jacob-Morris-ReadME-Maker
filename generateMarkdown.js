@@ -22,7 +22,7 @@ function renderLicenseBadge(license) {
   return `https://img.shields.io/static/v1?label=license&message=${licenseBadge.name}&color=${licenseBadge.color})`;
 };
 
-// TODO: Create a function that returns the license link figure out how to find license link
+// TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 // function renderLicenseLink(license) {
 //   let licenseLink;
@@ -68,6 +68,27 @@ function renderLicenseSection(license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
+  ## Description
+  ${data.description}
+  ## Table of Contents
+  [Installation](##Installation)
+  [Instructions](##Instructions)
+  [Contribution](##Contribution)
+  [Testing](##Testing)
+  [License](##License)
+  [Creator](##Creator)
+  ## Installation
+  ${data.installation}
+  ## Instructions
+  ${data.usage}
+  ## Contribution
+  ${data.contribution}
+  ## Testing
+  ${data.tests}
+  ## License
+  ## Creator
+  Github:${data.github}
+  Email:${data.email}
 
 `;
 }
