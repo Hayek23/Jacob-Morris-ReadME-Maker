@@ -37,7 +37,7 @@ const questions = [
     {
         type: 'list',
         message: 'Please select which license you would like to use:',
-        choices: ['MIT', 'Apache', 'BSD', 'GNU General Public License'],
+        choices: ['MIT', 'Apache', 'BSD 3-Clause', 'GNU General Public License'],
         name: 'license',
     },
     {
@@ -66,10 +66,9 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 async function init() {
     try{
-        const user = await inquirer.prompt(questions);
+        const data = await inquirer.prompt(questions);
 
         const createMarkdown = generateMarkdown(data);
-        console.log(createMarkdown);
 
         writeToFile('README.md', createMarkdown);
     } catch(err){
